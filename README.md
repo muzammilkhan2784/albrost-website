@@ -6,7 +6,7 @@ The website for Albrost Fast Food, with the full menu, photos, reviews and outle
 
 **Open it here: https://muzammilkhan2784.github.io/albrost-website/**
 
-It works on a phone or computer, and nothing needs to be installed.
+It works on a phone or computer, and nothing needs to be installed. On this link, the Reviews section sends people to Google to leave a review.
 
 ## Get your own copy
 
