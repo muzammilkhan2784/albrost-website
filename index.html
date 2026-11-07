@@ -58,7 +58,7 @@ em{font-style:italic;color:var(--red)}
 .nav a[aria-current="true"]{color:var(--ink);background:var(--butter-soft)}
 .callpill{font-weight:700;background:var(--ink);color:var(--cream);border-radius:999px;padding:12px 20px;text-decoration:none;font-size:15px;white-space:nowrap;transition:background .2s,transform .2s}
 .callpill:hover{background:var(--red)}
-@media (max-width:980px){.nav{display:none}.callpill{margin-left:auto}}
+
 
 /* buttons */
 .btn{font-family:var(--f-body);font-weight:700;text-decoration:none;padding:15px 26px;border-radius:999px;border:1.5px solid var(--ink);font-size:16px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .25s var(--ease),background .2s,color .2s,box-shadow .25s}
@@ -418,6 +418,28 @@ html:not(.js) .curtain{display:none}
 
 .h4stage{touch-action:auto;user-select:auto}
 .stk:hover img{transform:none}
+
+/* header: logo left + links on desktop; logo centred + burger on phones */
+.top .wrap{padding:6px 10px 6px 14px}
+.navpanel{margin-left:auto;display:flex;align-items:center}
+.mcalls,.menubtn{display:none}
+@media (max-width:980px){
+  .top .wrap{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;padding:6px 10px;min-height:62px}
+  .brand{grid-column:2;justify-self:center}
+  .menubtn{grid-column:3;justify-self:end;display:grid;align-content:center;justify-items:center;gap:5px;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);cursor:pointer}
+  .menubtn span{width:18px;height:2px;border-radius:2px;background:var(--cream);transition:transform .3s var(--ease),opacity .2s}
+  .top.open .menubtn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .top.open .menubtn span:nth-child(2){opacity:0}
+  .top.open .menubtn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .navpanel{position:absolute;left:0;right:0;top:calc(100% + 8px);margin:0;display:grid;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:0 24px 50px -16px rgba(60,35,10,.4);padding:12px;opacity:0;visibility:hidden;translate:0 -8px;transition:opacity .25s,translate .3s var(--ease),visibility 0s .3s}
+  .top.open .navpanel{opacity:1;visibility:visible;translate:0 0;transition-delay:0s}
+  .nav{display:grid;margin:0;gap:2px}
+  .nav a{font-size:18px;font-weight:600;color:var(--ink);padding:13px 16px;border-radius:18px}
+  .mcalls{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px 4px 2px;border-top:1px solid var(--line);margin-top:4px}
+  .mcalls a{text-align:center;text-decoration:none;font-weight:700;font-size:15px;padding:13px 8px;border-radius:999px;background:var(--ink);color:var(--cream)}
+  .mcalls a+a{background:var(--red)}
+}
+html,body{overflow-x:clip}
 </style>
 </head>
 <body>
@@ -425,13 +447,16 @@ html:not(.js) .curtain{display:none}
 <div class="curtain" id="curtain" aria-hidden="true"><i class="c1"></i><i class="c2"></i><img width="1400" height="808" src="img/cut/logo.webp" alt=""></div>
 <a class="skip" href="#home">Skip to Content</a>
 
-<header class="top">
+<header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="#home" aria-label="Albrost home"><img width="700" height="404" src="img/cut/logo.webp" alt="Albrost Fast Food"></a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#meals">Meals</a><a href="#buckets">Buckets</a><a href="#menu">Full menu</a><a href="#sweet">Desserts</a><a href="#inside">Inside</a><a href="#reviews">Reviews</a><a href="#visit">Outlets</a>
-    </nav>
-    <a class="callpill" href="#visit">Fatehgunj · Panigate</a>
+    <div class="navpanel" id="navpanel">
+      <nav class="nav" aria-label="Sections">
+        <a href="#meals">Meals</a><a href="#buckets">Buckets</a><a href="#menu">Full menu</a><a href="#sweet">Desserts</a><a href="#inside">Inside</a><a href="#reviews">Reviews</a><a href="#visit">Outlets</a>
+      </nav>
+      <div class="mcalls"><a href="tel:+917600979886">Call Fatehgunj</a><a href="tel:+917043495015">Call Panigate</a></div>
+    </div>
+    <button class="menubtn" type="button" id="menubtn" aria-expanded="false" aria-controls="navpanel" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -457,7 +482,7 @@ html:not(.js) .curtain{display:none}
   </div>
 </section>
 
-<div class="ticker" id="tick"><div class="row" id="ticker" aria-hidden="true"></div><button class="tpause" type="button" id="tpause" aria-pressed="false" aria-label="Pause scrolling text">❚❚</button></div>
+<div class="ticker" id="tick"><div class="row" id="ticker" aria-hidden="true"></div></div>
 
 <section class="crave" aria-labelledby="craveH">
   <div class="wrap">
@@ -607,12 +632,7 @@ html:not(.js) .curtain{display:none}
       <div class="fact"><b>Food</b>100% Halal. Every dish is marked veg (green) or non-veg (red).</div>
       <div class="fact"><b>Instagram</b><a href="https://www.instagram.com/albrost_fastfood_baroda/" target="_blank" rel="noopener">@albrost_fastfood_baroda</a></div>
     </div>
-    <div class="outlets">
-      <h3>ALSO IN MUMBAI</h3>
-      <div class="ol">
-        <span>Mumbai Central</span><span>J. J. Two Tank</span><span>J. J. Signal</span><span>Minara Masjid</span><span>Mazagaon Circle</span><span>Mahim</span><span>Wadala</span><span>Santacruz</span><span>Goregaon</span><span>Link Road Oshiwara</span>
-      </div>
-    </div>
+    
   </div>
 </section>
 </main>
@@ -842,9 +862,7 @@ function vt(fn){
  dlg.addEventListener("click",e=>{if(e.target===dlg)close()});
 })();
 
-// v2: pause control for the scrolling ticker
-(()=>{const t=$("#tick"),b=$("#tpause");b.addEventListener("click",()=>{const p=t.classList.toggle("paused");
-  b.setAttribute("aria-pressed",p);b.setAttribute("aria-label",p?"Play scrolling text":"Pause scrolling text");b.textContent=p?"▶":"❚❚"})})();
+
 
 // v2: highlight the section you are reading in the top nav
 (()=>{const links=[...document.querySelectorAll(".nav a")];
@@ -867,6 +885,16 @@ function vt(fn){
    const el=e.target,to=+el.dataset.n,t0=performance.now(),D=1300;
    const f=t=>{const p=Math.min(1,(t-t0)/D);set(el,to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}},{threshold:.6});
   nums.forEach(el=>{set(el,0);io.observe(el)})}
+})();
+
+// v5.2: phone menu
+(()=>{const top=$("#top"),btn=$("#menubtn");
+ const set=o=>{top.classList.toggle("open",o);btn.setAttribute("aria-expanded",o);btn.setAttribute("aria-label",o?"Close menu":"Open menu")};
+ btn.addEventListener("click",()=>set(!top.classList.contains("open")));
+ $("#navpanel").addEventListener("click",e=>{if(e.target.closest("a"))set(false)});
+ document.addEventListener("keydown",e=>{if(e.key==="Escape")set(false)});
+ document.addEventListener("click",e=>{if(!top.contains(e.target))set(false)});
+ matchMedia("(min-width:981px)").addEventListener("change",()=>set(false));
 })();
 </script>
 
