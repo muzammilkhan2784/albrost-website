@@ -440,6 +440,15 @@ html:not(.js) .curtain{display:none}
   .mcalls a+a{background:var(--red)}
 }
 html,body{overflow-x:clip}
+
+.fact.hours{grid-column:1/-1}
+.hrs{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.hrs li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-weight:500}
+.hrs li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.hrs li.today{color:var(--butter);font-weight:700}
+.hrs li em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--butter);color:var(--ink);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+@media (max-width:700px){.hrs{grid-template-columns:1fr}}
+.facts{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:860px){.facts{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -628,7 +637,7 @@ html,body{overflow-x:clip}
       </article>
     </div>
     <div class="facts">
-      <div class="fact"><b>Hours</b>Open every day, 1 PM to 12 AM.</div>
+      <div class="fact hours"><b>Opening hours</b><ul class="hrs"><li data-d="1"><span>Monday</span><span>1 PM – 12 AM</span></li><li data-d="2"><span>Tuesday</span><span>1 PM – 12 AM</span></li><li data-d="3"><span>Wednesday</span><span>1 PM – 12 AM</span></li><li data-d="4"><span>Thursday</span><span>1 PM – 12 AM</span></li><li data-d="5"><span>Friday</span><span>1 PM – 12 AM</span></li><li data-d="6"><span>Saturday</span><span>1 PM – 12 AM</span></li><li data-d="0"><span>Sunday</span><span>1 PM – 12 AM</span></li></ul></div>
       <div class="fact"><b>Food</b>100% Halal. Every dish is marked veg (green) or non-veg (red).</div>
       <div class="fact"><b>Instagram</b><a href="https://www.instagram.com/albrost_fastfood_baroda/" target="_blank" rel="noopener">@albrost_fastfood_baroda</a></div>
     </div>
@@ -887,6 +896,7 @@ function vt(fn){
   nums.forEach(el=>{set(el,0);io.observe(el)})}
 })();
 
+document.querySelectorAll(".hrs li").forEach(li=>{if(+li.dataset.d===new Date().getDay()){li.classList.add("today");li.firstChild.insertAdjacentHTML("beforeend"," <em>Today</em>")}});
 // v5.2: phone menu
 (()=>{const top=$("#top"),btn=$("#menubtn");
  const set=o=>{top.classList.toggle("open",o);btn.setAttribute("aria-expanded",o);btn.setAttribute("aria-label",o?"Close menu":"Open menu")};
