@@ -449,6 +449,23 @@ html,body{overflow-x:clip}
 .hrs li em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--butter);color:var(--ink);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle}
 @media (max-width:700px){.hrs{grid-template-columns:1fr}}
 .facts{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:860px){.facts{grid-template-columns:1fr}}
+
+/* diet checkboxes */
+.diet{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.dlab{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.diet label{display:inline-flex;align-items:center;gap:9px;cursor:pointer;font-weight:600;font-size:15px;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:9px 16px 9px 12px;transition:border-color .2s,background .2s}
+.diet label:hover{border-color:var(--ink)}
+.diet label:has(input:checked){border-color:var(--ink);background:var(--butter-soft)}
+.diet input{width:19px;height:19px;margin:0;accent-color:var(--ink);cursor:pointer}
+.diet input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+/* dips: tidy tiles on phones */
+@media (max-width:860px){
+  .dips{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .dip{flex-direction:column;justify-content:center;text-align:center;gap:6px;border-radius:26px;padding:16px 10px 14px}
+  .dip img{width:64px;height:64px}
+  .dip span{flex:none;font-size:15px}
+  .dip b{font-size:17px}
+}
 </style>
 </head>
 <body>
@@ -531,11 +548,7 @@ html,body{overflow-x:clip}
     <div class="tools">
       <div class="tabs" id="tabs" role="toolbar" aria-label="Menu sections"></div>
       <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b9b7b2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" name="q" type="search" placeholder="Search: peri peri, paneer, Lebanese…" autocomplete="off" spellcheck="false" enterkeyhint="search"></label>
-      <div class="seg" role="group" aria-label="Diet">
-        <button type="button" data-diet="all" aria-pressed="true"><span class="pill" aria-hidden="true"></span>All</button>
-        <button type="button" data-diet="veg" aria-pressed="false"><span class="pill" aria-hidden="true"></span><span class="dot v"></span>Veg</button>
-        <button type="button" data-diet="non" aria-pressed="false"><span class="pill" aria-hidden="true"></span><span class="dot"></span>Chicken &amp; fish</button>
-      </div>
+      <div class="diet" role="group" aria-label="Show only"><span class="dlab">Show only</span><label><input type="checkbox" data-dchk="veg"><span class="dot v"></span>Veg</label><label><input type="checkbox" data-dchk="non"><span class="dot"></span>Chicken &amp; fish</label></div>
     </div>
     <div class="cats" id="cats"></div>
   </div>
@@ -905,6 +918,11 @@ document.querySelectorAll(".hrs li").forEach(li=>{if(+li.dataset.d===new Date().
  document.addEventListener("keydown",e=>{if(e.key==="Escape")set(false)});
  document.addEventListener("click",e=>{if(!top.contains(e.target))set(false)});
  matchMedia("(min-width:981px)").addEventListener("change",()=>set(false));
+})();
+// v5.3: diet checkboxes
+(()=>{const chk=[...document.querySelectorAll('[data-dchk]')];
+ const sync=()=>chk.forEach(c=>c.checked=(diet==='veg'&&c.dataset.dchk==='veg')||(diet==='non'&&c.dataset.dchk==='non'));sync();
+ chk.forEach(c=>c.addEventListener('change',()=>{const v=chk[0].checked,n=chk[1].checked;vt(()=>{diet=(v&&!n)?'veg':(n&&!v)?'non':'all';renderMenu()})}));
 })();
 </script>
 
