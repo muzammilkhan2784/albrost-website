@@ -456,6 +456,9 @@ html,body{overflow-x:clip}
 .diet label{display:inline-flex;align-items:center;gap:9px;cursor:pointer;font-weight:600;font-size:15px;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:9px 16px 9px 12px;transition:border-color .2s,background .2s}
 .diet label:hover{border-color:var(--ink)}
 .diet label:has(input:checked){border-color:var(--ink);background:var(--butter-soft)}
+.diet input{appearance:none;-webkit-appearance:none;position:absolute;opacity:0;width:0;height:0}
+.diet label{position:relative}
+.diet label:has(input:focus-visible){outline:3px solid var(--red);outline-offset:2px}
 .diet input{width:19px;height:19px;margin:0;accent-color:var(--ink);cursor:pointer}
 .diet input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 /* dips: tidy tiles on phones */
@@ -548,7 +551,7 @@ html,body{overflow-x:clip}
     <div class="tools">
       <div class="tabs" id="tabs" role="toolbar" aria-label="Menu sections"></div>
       <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b9b7b2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" name="q" type="search" placeholder="Search: peri peri, paneer, Lebanese…" autocomplete="off" spellcheck="false" enterkeyhint="search"></label>
-      <div class="diet" role="group" aria-label="Show only"><span class="dlab">Show only</span><label><input type="checkbox" data-dchk="veg"><span class="dot v"></span>Veg</label><label><input type="checkbox" data-dchk="non"><span class="dot"></span>Chicken &amp; fish</label></div>
+      <div class="diet" role="radiogroup" aria-label="Show"><label><input type="radio" name="diet" value="all"><span>All</span></label><label><input type="radio" name="diet" value="veg"><span class="dot v"></span><span>Veg</span></label><label><input type="radio" name="diet" value="non"><span class="dot"></span><span>Non veg</span></label></div>
     </div>
     <div class="cats" id="cats"></div>
   </div>
@@ -919,10 +922,10 @@ document.querySelectorAll(".hrs li").forEach(li=>{if(+li.dataset.d===new Date().
  document.addEventListener("click",e=>{if(!top.contains(e.target))set(false)});
  matchMedia("(min-width:981px)").addEventListener("change",()=>set(false));
 })();
-// v5.3: diet checkboxes
-(()=>{const chk=[...document.querySelectorAll('[data-dchk]')];
- const sync=()=>chk.forEach(c=>c.checked=(diet==='veg'&&c.dataset.dchk==='veg')||(diet==='non'&&c.dataset.dchk==='non'));sync();
- chk.forEach(c=>c.addEventListener('change',()=>{const v=chk[0].checked,n=chk[1].checked;vt(()=>{diet=(v&&!n)?'veg':(n&&!v)?'non':'all';renderMenu()})}));
+// v5.3: diet radios
+(()=>{const r=[...document.querySelectorAll('input[name=diet]')];
+ const sync=()=>r.forEach(x=>x.checked=x.value===diet);sync();
+ r.forEach(x=>x.addEventListener('change',()=>{if(!x.checked)return;vt(()=>{diet=x.value;renderMenu()})}));
 })();
 </script>
 
