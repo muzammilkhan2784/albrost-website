@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0c">
 <title>Albrost Fast Food</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Albrost Fast Food. Fatehgunj and Panigate. Halal shawarma, burgers, pizza, broast chicken and buckets since 2014.">
@@ -64,7 +65,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .ff{display:inline-block;font-family:var(--f-display);background:var(--yellow);color:var(--red);font-size:clamp(20px,2.6vw,30px);padding:2px 14px;border-radius:10px;border:3px solid var(--red);box-shadow:0 0 0 3px var(--yellow);margin-top:12px;letter-spacing:.02em}
 .hero p.lede{font-size:18px;max-width:44ch;margin:20px 0 0;color:#fff}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;padding:13px 22px;border-radius:6px;border:3px solid var(--ink);font-size:16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .15s,box-shadow .15s}
+.btn{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;padding:13px 22px;border-radius:6px;border:3px solid var(--ink);font-size:16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .15s}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
 .btn.y{background:var(--yellow);color:var(--ink)}
 .btn.k{background:var(--ink);color:#fff}
@@ -103,7 +104,7 @@ section{padding-block:56px}
 
 /* meals: drink + main + fries, built from the menu's cut-outs */
 .meals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.meal{background:var(--board);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.meal{background:var(--board);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s}
 .meal:hover{transform:translateY(-4px);border-color:var(--yellow)}
 .stage{position:relative;aspect-ratio:1.5;background:radial-gradient(120% 90% at 50% 100%,#2a2a2e 0,#121214 60%);overflow:hidden}
 .stage img{position:absolute;filter:drop-shadow(0 12px 14px rgba(0,0,0,.55));transition:transform .4s}
@@ -153,12 +154,12 @@ section{padding-block:56px}
 .tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1 1 100%;padding-bottom:2px}
 .tabs::-webkit-scrollbar{display:none}
 .tab{font-family:var(--f-label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:14px;white-space:nowrap;background:var(--board);color:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
-.tab[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
+.tab[aria-pressed="true"]{border-color:var(--red)}
 .search{flex:1 1 240px;min-width:0;display:flex;align-items:center;background:var(--board);border:1px solid var(--line);border-radius:8px;padding:0 12px}
 .search input{flex:1;min-width:0;background:transparent;border:0;color:#fff;font:inherit;padding:10px 6px;outline:none}
 .seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .seg button{background:var(--board);color:#fff;border:0;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.06em;font-size:13px;padding:10px 12px;cursor:pointer;display:flex;gap:6px;align-items:center}
-.seg button[aria-pressed="true"]{background:#fff;color:var(--ink)}
+.seg button[aria-pressed="true"]{color:var(--ink)}
 
 .cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
 .cat{background:var(--board);border:1px solid var(--line);border-radius:16px;overflow:hidden}
@@ -185,7 +186,7 @@ section{padding-block:56px}
 .caramel{position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(120% 80% at 30% 20%,#f6d7b0 0,#e8b98a 38%,#a9532a 70%,var(--caramel) 100%);padding:30px 26px 26px;display:flex;flex-direction:column;align-items:center;gap:18px;justify-content:center;min-height:380px;isolation:isolate}
 .caramel::before{content:"";position:absolute;left:-10%;right:-10%;bottom:-30%;height:60%;background:var(--caramel);border-radius:50% 50% 0 0;z-index:-1}
 .caramel::after{content:"";position:absolute;right:-30px;top:-40px;width:200px;height:160px;background:var(--caramel);border-radius:0 0 50% 60%;opacity:.85;z-index:-1}
-.caramel h3{font-family:var(--f-display);font-weight:400;color:var(--caramel);font-size:clamp(36px,5vw,54px);letter-spacing:.02em;line-height:1;text-align:center;text-shadow:0 2px 0 rgba(255,255,255,.35)}
+.caramel .cmh{margin:0;font-family:var(--f-display);font-weight:400;color:var(--caramel);font-size:clamp(36px,5vw,54px);letter-spacing:.02em;line-height:1;text-align:center;text-shadow:0 2px 0 rgba(255,255,255,.35)}
 .flan{width:min(78%,360px);aspect-ratio:1.45;border-radius:50%;padding:8px;background:linear-gradient(135deg,#f9d77a,#b8741f);box-shadow:0 20px 40px rgba(60,20,5,.5)}
 .flan img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .price50{font-family:var(--f-display);font-size:28px;background:#fff;color:var(--caramel);border-radius:999px;padding:4px 22px;letter-spacing:.03em;box-shadow:0 6px 14px rgba(60,20,5,.35)}
@@ -221,7 +222,7 @@ section{padding-block:56px}
 .fld textarea{resize:vertical}
 .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--yellow)}
 .stars{display:flex;gap:4px}
-.stars button{background:none;border:0;font-size:34px;line-height:1;color:#3a3a3f;cursor:pointer;padding:0 2px;transition:transform .12s,color .12s}
+.stars button{background:none;border:0;font-size:34px;line-height:1;color:#3a3a3f;cursor:pointer;padding:0 2px;transition:transform .12s}
 .stars button.on{color:var(--yellow)}
 .stars button:hover{transform:scale(1.15)}
 .rf-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
@@ -273,14 +274,156 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding-block:26px
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
 footer img{height:34px;width:auto}
 
+
+/* ===== v2: Web Interface Guidelines fixes ===== */
+html{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.skip{position:absolute;left:12px;top:-80px;z-index:100;background:var(--yellow);color:var(--ink);font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:10px 16px;border-radius:6px;text-decoration:none}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pv{position:fixed;left:12px;bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:90;background:var(--yellow);color:var(--ink);font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12px;padding:6px 10px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.4);pointer-events:none}
+.search:focus-within{border-color:var(--yellow)}
+.tab:hover{border-color:var(--yellow)}
+.lnk:hover{background:rgba(255,237,0,.14)}
+.lnk.solid:hover,.callpill:hover{background:#fff}
+.nav a[aria-current="true"]{background:var(--red)}
+.feast img{height:auto}
+.ticker{position:relative}
+.ticker.paused .row{animation-play-state:paused}
+.tpause{position:absolute;right:8px;top:50%;translate:0 -50%;z-index:2;width:36px;height:36px;border-radius:50%;border:2px solid var(--ink);background:var(--yellow);color:var(--ink);font-size:12px;cursor:pointer;display:grid;place-items:center}
+.tpause:hover{background:#fff}
+
+/* sliding pills for menu tabs and the diet switch */
+.tab,.seg button{position:relative;isolation:isolate}
+.pill{position:absolute;inset:-1px;border-radius:inherit;z-index:-1;display:none;pointer-events:none}
+.tab .pill{background:var(--red)}
+.seg .pill{background:#fff;inset:0;border-radius:0}
+.tab[aria-pressed="true"] .pill{display:block;view-transition-name:tab-pill}
+.seg button[aria-pressed="true"] .pill{display:block;view-transition-name:seg-pill}
+
+/* meal cards open a detail view */
+.meal{position:relative}
+.mopen{all:unset;cursor:pointer}
+.mopen::after{content:"";position:absolute;inset:0;z-index:5;border-radius:14px}
+.mopen:focus-visible{outline:none}
+.mopen:focus-visible::after{outline:3px solid var(--yellow);outline-offset:-3px}
+.peek{margin-top:auto;padding-top:6px;font-family:var(--f-label);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--yellow)}
+.mdlg{border:0;padding:0;border-radius:18px;background:var(--board);color:#fff;width:min(560px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;view-transition-name:meal-panel}
+.mdlg::backdrop{background:rgba(0,0,0,.72)}
+.mstage{position:relative;aspect-ratio:1.4;background:radial-gradient(120% 90% at 50% 100%,#2a2a2e 0,#121214 60%)}
+.mstage img{position:absolute;width:68%;height:auto;left:16%;bottom:8%;filter:drop-shadow(0 18px 22px rgba(0,0,0,.6))}
+.mbody{padding:18px 22px 24px;display:grid;gap:10px}
+.mbody h2{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,6vw,36px);text-transform:uppercase;letter-spacing:.02em;line-height:1.05;display:flex;gap:10px;align-items:center}
+.mbody p{margin:0}
+.mnote{color:var(--muted)}
+.mclose{position:absolute;top:12px;left:12px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:26px;line-height:1;cursor:pointer;z-index:6}
+.mclose:hover{background:var(--red)}
+
+/* ===== v2: view transitions (react-view-transitions skill recipes, native API) ===== */
+:root{--duration-exit:150ms;--duration-enter:210ms;--duration-move:400ms}
+::view-transition{pointer-events:none}
+::view-transition-old(root){display:none}
+::view-transition-new(root){animation:none}
+::view-transition-group(*){animation-duration:var(--duration-move);animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+.cat{view-transition-class:card}
+::view-transition-new(.card):only-child{animation:var(--duration-enter) ease-out var(--duration-exit) both vt-in}
+::view-transition-old(.card):only-child{animation:var(--duration-exit) ease-in both vt-out}
+@keyframes vt-in{from{opacity:0;transform:scale(.92)}}
+@keyframes vt-out{to{opacity:0;transform:scale(.92)}}
+::view-transition-group(tab-pill),::view-transition-group(seg-pill){animation-duration:260ms}
+::view-transition-old(tab-pill),::view-transition-new(tab-pill),::view-transition-old(seg-pill),::view-transition-new(seg-pill){animation:none;height:100%}
+::view-transition-group(meal-hero){animation-duration:440ms}
+::view-transition-image-pair(meal-hero){animation-name:via-blur}
+@keyframes via-blur{30%{filter:blur(2px)}}
+::view-transition-new(meal-panel):only-child{animation:var(--duration-enter) ease-out both vt-in}
+::view-transition-old(meal-panel):only-child{animation:var(--duration-exit) ease-in both vt-out}
+
+/* scroll-driven reveals (transform/opacity only) */
+@supports (animation-timeline:view()){
+  .meal,.bucket,.branch,.ph.shot,.fact{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+}
+@keyframes rise{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){::view-transition-old(*),::view-transition-new(*),::view-transition-group(*){animation-duration:0s!important;animation-delay:0s!important}}
+
+/* ===== v4 ===== */
+:where(img[height]){height:auto}
+.bstage .b{width:auto;max-width:none;height:100%}
+@property --tilt{syntax:"<angle>";inherits:false;initial-value:0deg}
+/* hero: die-cut food stickers on a sun, draggable */
+.hero{overflow:hidden}
+.hero::before{background:linear-gradient(115deg,var(--red) 0 46%,var(--red-deep) 46% 47%,#1c0508 47% 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(rgba(0,0,0,.16) 1.4px,transparent 1.9px);background-size:16px 16px;-webkit-mask:linear-gradient(115deg,#000 0 46%,transparent 47%);mask:linear-gradient(115deg,#000 0 46%,transparent 47%);right:auto;top:0;width:100%;aspect-ratio:auto;border-radius:0}
+.h4stage{position:relative;aspect-ratio:1/1;width:100%;max-width:640px;justify-self:center;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.sun{position:absolute;inset:7% 5% 4% 7%;border-radius:50%;background:var(--yellow);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden}
+.sun::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(227,0,15,.42) 2px,transparent 2.6px);background-size:15px 15px;-webkit-mask:radial-gradient(circle at 30% 24%,transparent 0,#000 78%);mask:radial-gradient(circle at 30% 24%,transparent 0,#000 78%)}
+.stk{position:absolute;width:var(--w);left:var(--l);top:var(--t);z-index:var(--z);cursor:grab;touch-action:pan-y;
+  transform:translate(var(--dx,0px),var(--dy,0px)) rotate(calc(var(--r) + var(--tilt,0deg)));
+  filter:drop-shadow(0 5px 0 rgba(0,0,0,.28)) drop-shadow(0 14px 16px rgba(0,0,0,.34));
+  animation:slap .75s cubic-bezier(.2,1.5,.4,1) both,bob 6.5s ease-in-out infinite;
+  animation-delay:calc(var(--k) * 120ms),calc(var(--k) * -1.3s)}
+.stk:not(.drag){transition:transform .5s cubic-bezier(.3,1.5,.5,1),filter .2s}
+.stk img{display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.stk:hover img{transform:scale(1.04) rotate(-1.5deg)}
+.stk.drag{cursor:grabbing;filter:drop-shadow(0 14px 0 rgba(0,0,0,.2)) drop-shadow(0 28px 24px rgba(0,0,0,.42))}
+.stk.drag img{transform:scale(1.07)}
+@keyframes slap{from{opacity:0;scale:1.55;rotate:-14deg}60%{opacity:1}}
+@keyframes bob{50%{translate:0 -1.4%}}
+.js:not(.js-ready) .stk{animation-play-state:paused}
+.seal{position:absolute;right:-1%;top:44%;width:25%;aspect-ratio:1;z-index:8;pointer-events:none}
+.seal svg{position:absolute;inset:0;animation:spin 22s linear infinite;overflow:visible}
+.seal text{font-family:var(--f-display);font-size:19px;letter-spacing:.07em;fill:#fff;paint-order:stroke;stroke:var(--ink);stroke-width:4px}
+.seal img{position:absolute;inset:20%;width:60%;height:auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.4))}
+@keyframes spin{to{rotate:360deg}}
+.ptag{position:absolute;left:33%;bottom:-1%;z-index:9;background:var(--yellow);color:var(--ink);border:3px solid var(--ink);border-radius:12px;box-shadow:5px 5px 0 var(--ink);padding:6px 16px 7px;font-family:var(--f-display);font-size:clamp(18px,2.6vw,28px);line-height:1;rotate:-5deg;pointer-events:none;white-space:nowrap}
+.ptag b{color:var(--red);font-weight:400}
+.hint{position:absolute;right:2%;bottom:-5%;z-index:9;background:#fff;color:var(--ink);border-radius:999px;padding:6px 14px;font:600 14px/1 var(--f-label);letter-spacing:.04em;pointer-events:none;transition:opacity .4s,translate .4s}
+.hint.gone{opacity:0;translate:0 8px}
+@media (max-width:860px){.h4stage{order:-1;max-width:min(80vw,360px);margin-bottom:18px}.hero .wrap{padding-block:22px 40px;gap:8px}.hint{bottom:-9%}.ctas .btn{padding:12px 16px;font-size:15px}.ptag{font-size:18px;left:30%}}
+/* what are you craving */
+.crave{background:var(--yellow);color:var(--ink);border-block:3px solid var(--ink);padding:32px 0 22px;position:relative;z-index:1}
+.craveHead{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.craveHead h2{font-family:var(--f-display);font-weight:400;font-size:clamp(32px,4.6vw,52px);letter-spacing:.01em;line-height:1}
+.craveHead p{margin:0;font-weight:600}
+.crv{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:22px 6px 12px;margin-inline:-6px;scrollbar-width:none}
+.crv::-webkit-scrollbar{display:none}
+.crv a{flex:0 0 clamp(132px,38vw,176px);display:grid;justify-items:center;gap:8px;text-decoration:none;color:var(--ink);scroll-snap-align:start;border-radius:14px;padding:4px}
+.crv .pic{width:100%;aspect-ratio:1;display:grid;place-items:center}
+.crv img{max-width:100%;max-height:100%;width:auto;height:auto;rotate:var(--r);filter:drop-shadow(0 4px 0 rgba(0,0,0,.22)) drop-shadow(0 8px 10px rgba(0,0,0,.18));transition:rotate .35s cubic-bezier(.3,1.6,.5,1),scale .35s cubic-bezier(.3,1.6,.5,1)}
+.crv a:hover img,.crv a:focus-visible img{rotate:calc(var(--r) * -1.4);scale:1.1}
+.crv a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.crv b{font-family:var(--f-display);font-weight:400;font-size:21px;letter-spacing:.02em;text-align:center;line-height:1.05}
+@media (min-width:1000px){.crv{display:grid;grid-template-columns:repeat(7,1fr);overflow:visible;gap:12px}.crv a{flex:none}}
+/* curtain */
+.curtain{position:fixed;inset:0;z-index:200;display:grid;place-items:center;pointer-events:none}
+.curtain i{position:absolute;left:0;right:0;height:50.5%;background:var(--red)}
+.curtain .c1{top:0;border-bottom:4px solid var(--yellow)}
+.curtain .c2{bottom:0;background:var(--ink);border-top:4px solid var(--yellow)}
+.curtain img{position:relative;width:min(300px,56vw);height:auto;animation:logo-in .6s .1s both cubic-bezier(.2,.9,.2,1)}
+@keyframes logo-in{from{scale:.7;opacity:0}}
+.curtain.open .c1{animation:up .85s cubic-bezier(.77,0,.18,1) forwards}
+.curtain.open .c2{animation:down .85s cubic-bezier(.77,0,.18,1) forwards}
+.curtain.open img{animation:logo-out .45s ease-in forwards}
+@keyframes up{to{translate:0 -101%}}@keyframes down{to{translate:0 101%}}@keyframes logo-out{to{scale:1.25;opacity:0}}
+html:not(.js) .curtain{display:none}
+/* banners wipe in; ticker leans into the scroll */
+@supports (animation-timeline:view()){
+  .banner h2{animation:wipe linear both;animation-timeline:view();animation-range:entry 5% entry 55%}
+  .banner .bars{animation:wipe linear both;animation-timeline:view();animation-range:entry 20% entry 70%}
+}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0);translate:-24px 0}to{clip-path:inset(0 0 0 0);translate:0 0}}
+.ticker{transform:skewX(var(--skew,0deg));will-change:transform}
+@media (prefers-reduced-motion:reduce){.curtain{display:none}.seal svg{animation:none}.ticker{transform:none}}
 </style>
 </head>
 <body>
+<script>document.documentElement.classList.add("js")</script>
+<div class="curtain" id="curtain" aria-hidden="true"><i class="c1"></i><i class="c2"></i><img width="1400" height="808" src="img/cut/logo.webp" alt=""></div>
+<a class="skip" href="#home">Skip to Content</a>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#home" aria-label="Albrost home"><img src="img/cut/logo.webp" alt="Albrost Fast Food"></a>
+    <a class="brand" href="#home" aria-label="Albrost home"><img width="700" height="404" src="img/cut/logo.webp" alt="Albrost Fast Food"></a>
     <nav class="nav" aria-label="Sections">
       <a href="#meals">Meals</a><a href="#buckets">Buckets</a><a href="#menu">Full menu</a><a href="#sweet">Desserts</a><a href="#inside">Inside</a><a href="#reviews">Reviews</a><a href="#visit">Outlets</a>
     </nav>
@@ -288,35 +431,39 @@ footer img{height:34px;width:auto}
   </div>
 </header>
 
-<main id="home">
+<main id="home" tabindex="-1">
 <section class="hero" style="padding:0">
   <div class="rule"></div>
   <div class="wrap">
     <div>
       <div class="eyebrow"><span class="tag">Since 2014</span> Fatehgunj · Panigate</div>
-      <div class="albaik">ALBAIK</div>
-      <h1 class="wordmark">ALBROST<sup>®</sup></h1>
+      <div class="albaik" translate="no">ALBAIK</div>
+      <h1 class="wordmark" translate="no">ALBROST<sup>®</sup></h1>
       <div class="ff">FAST FOOD</div>
       <p class="lede">Crispy broast chicken, Samoli and Khaboos shawarma, loaded burgers and melting pizzas. 100% halal, made fresh at our two outlets.</p>
       <div class="ctas">
-        <a class="btn y" href="#menu">See the full menu</a>
-        <a class="btn k" href="#visit">Find an outlet</a>
+        <a class="btn y" href="#menu">See the Full Menu</a>
+        <a class="btn k" href="#visit">Find an Outlet</a>
       </div>
     </div>
-    <div class="feast" id="feast" aria-hidden="true">
-      <div class="burst"></div>
-      <img class="f-pizza" data-d="14" src="img/cut/pizza.webp" alt="">
-      <img class="f-wrap" data-d="10" src="img/cut/wrap.webp" alt="">
-      <img class="f-burger" data-d="22" src="img/cut/loadedburger.webp" alt="">
-      <img class="f-fries" data-d="16" src="img/cut/fries2.webp" alt="">
-      <img class="f-nuggets" data-d="26" src="img/cut/nuggets.webp" alt="">
-      <img class="f-halal" data-d="6" src="img/cut/halal.webp" alt="">
+    <div class="h4stage" id="h4stage" aria-hidden="true">
+      <div class="sun"></div>
+      <div class="stk" style="--w:48%;--l:-3%;--t:6%;--r:-10deg;--z:2;--k:0"><img width="1000" height="555" src="img/cut/st_wrap.webp" alt="" decoding="async" draggable="false"></div><div class="stk" style="--w:50%;--l:50%;--t:-3%;--r:8deg;--z:3;--k:1"><img width="1000" height="698" src="img/cut/st_chpizza.webp" alt="" decoding="async" draggable="false"></div><div class="stk" style="--w:60%;--l:19%;--t:24%;--r:-4deg;--z:4;--k:2"><img width="1000" height="848" src="img/cut/st_loadedburger.webp" alt="" fetchpriority="high" decoding="async" draggable="false"></div><div class="stk" style="--w:43%;--l:-1%;--t:64%;--r:6deg;--z:5;--k:3"><img width="1000" height="529" src="img/cut/st_fries2.webp" alt="" decoding="async" draggable="false"></div><div class="stk" style="--w:39%;--l:60%;--t:62%;--r:-8deg;--z:6;--k:4"><img width="1000" height="704" src="img/cut/st_nuggets.webp" alt="" decoding="async" draggable="false"></div><div class="seal"><svg viewBox="0 0 200 200"><defs><path id="ring" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1-160 0"/></defs><text><textPath href="#ring" startOffset="0">100% HALAL · SINCE 2014 · FATEHGUNJ · PANIGATE ·</textPath></text></svg><img width="640" height="612" src="img/cut/halal.webp" alt=""></div>
+      <div class="ptag" id="ptag">Meals from <b>₹<span id="minp">120</span></b></div>
+      <div class="hint" id="hint">Drag the food around</div>
     </div>
   </div>
   <div class="rule"></div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="row" id="ticker"></div></div>
+<div class="ticker" id="tick"><div class="row" id="ticker" aria-hidden="true"></div><button class="tpause" type="button" id="tpause" aria-pressed="false" aria-label="Pause scrolling text">❚❚</button></div>
+
+<section class="crave" aria-labelledby="craveH">
+  <div class="wrap">
+    <div class="craveHead"><h2 id="craveH">What are you craving?</h2><p>Tap a dish and the full menu opens on it.</p></div>
+    <div class="crv"><a href="#menu" data-go="burger" style="--r:-5deg"><span class="pic"><img width="800" height="800" src="img/cut/st_loadedburger.webp" alt="" loading="lazy" decoding="async"></span><b>Burgers</b></a><a href="#menu" data-go="pizza" style="--r:4deg"><span class="pic"><img width="800" height="800" src="img/cut/st_pizza.webp" alt="" loading="lazy" decoding="async"></span><b>Pizza</b></a><a href="#menu" data-go="shawarma" style="--r:-4deg"><span class="pic"><img width="800" height="800" src="img/cut/st_chshawarma.webp" alt="" loading="lazy" decoding="async"></span><b>Shawarma</b></a><a href="#menu" data-go="albrostchi" style="--r:5deg"><span class="pic"><img width="800" height="800" src="img/cut/st_bucket.webp" alt="" loading="lazy" decoding="async"></span><b>Broast & buckets</b></a><a href="#menu" data-go="rolls" style="--r:-6deg"><span class="pic"><img width="800" height="800" src="img/cut/st_wrap.webp" alt="" loading="lazy" decoding="async"></span><b>Rolls & wraps</b></a><a href="#menu" data-go="sandwich" style="--r:4deg"><span class="pic"><img width="800" height="800" src="img/cut/st_meltsandwich.webp" alt="" loading="lazy" decoding="async"></span><b>Sandwiches</b></a><a href="#menu" data-go="fries" style="--r:-4deg"><span class="pic"><img width="800" height="800" src="img/cut/st_fries2.webp" alt="" loading="lazy" decoding="async"></span><b>Fries</b></a></div>
+  </div>
+</section>
 
 <section id="meals" class="doodle">
   <div class="wrap">
@@ -340,11 +487,11 @@ footer img{height:34px;width:auto}
     <p class="sub">All prices in ₹. Pick a section, search for a dish, or show only veg.</p>
     <div class="tools">
       <div class="tabs" id="tabs" role="toolbar" aria-label="Menu sections"></div>
-      <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b9b7b2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Search: peri peri, paneer, Lebanese…" autocomplete="off"></label>
+      <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b9b7b2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" name="q" type="search" placeholder="Search: peri peri, paneer, Lebanese…" autocomplete="off" spellcheck="false" enterkeyhint="search"></label>
       <div class="seg" role="group" aria-label="Diet">
-        <button type="button" data-diet="all" aria-pressed="true">All</button>
-        <button type="button" data-diet="veg" aria-pressed="false"><span class="dot v"></span>Veg</button>
-        <button type="button" data-diet="non" aria-pressed="false"><span class="dot"></span>Chicken &amp; fish</button>
+        <button type="button" data-diet="all" aria-pressed="true"><span class="pill" aria-hidden="true"></span>All</button>
+        <button type="button" data-diet="veg" aria-pressed="false"><span class="pill" aria-hidden="true"></span><span class="dot v"></span>Veg</button>
+        <button type="button" data-diet="non" aria-pressed="false"><span class="pill" aria-hidden="true"></span><span class="dot"></span>Chicken &amp; fish</button>
       </div>
     </div>
     <div class="cats" id="cats"></div>
@@ -354,8 +501,8 @@ footer img{height:34px;width:auto}
 <section id="sweet">
   <div class="wrap duo">
     <div class="caramel">
-      <h3>SPECIAL<br>CARAMEL</h3>
-      <div class="flan"><img src="img/cut/caramel.webp" alt="Special Caramel pudding"></div>
+      <p class="cmh" translate="no">SPECIAL<br>CARAMEL</p>
+      <div class="flan"><img width="776" height="536" loading="lazy" src="img/cut/caramel.webp" alt="Special Caramel pudding"></div>
       <div class="price50">₹50 ONLY</div>
     </div>
     <div class="slogan">
@@ -363,12 +510,12 @@ footer img{height:34px;width:auto}
       <div class="big">The <em>Good Food</em> People</div>
       <p style="margin:0;color:var(--muted)">Finish with our Special Caramel pudding for ₹50. Ask at the counter for a chilled Masala Milk.</p>
       <div class="favs">
-        <div class="fav"><div class="im"><img src="img/cut/wrap.webp" alt=""></div><span>Rolls</span></div>
-        <div class="fav"><div class="im"><img src="img/cut/meltsandwich.webp" alt=""></div><span>Melting Sandwich</span></div>
-        <div class="fav"><div class="im"><img src="img/cut/milk.webp" alt=""></div><span>Masala Milk</span></div>
-        <div class="fav"><div class="im"><img src="img/cut/fries2.webp" alt=""></div><span>Fries</span></div>
-        <div class="fav"><div class="im"><img src="img/cut/nuggets.webp" alt=""></div><span>Nuggets</span></div>
-        <div class="fav"><div class="im"><img src="img/cut/bucket.webp" alt=""></div><span>Bucket</span></div>
+        <div class="fav"><div class="im"><img width="760" height="406" loading="lazy" src="img/cut/wrap.webp" alt=""></div><span>Rolls</span></div>
+        <div class="fav"><div class="im"><img width="708" height="726" loading="lazy" src="img/cut/meltsandwich.webp" alt=""></div><span>Melting Sandwich</span></div>
+        <div class="fav"><div class="im"><img width="203" height="598" loading="lazy" src="img/cut/milk.webp" alt=""></div><span>Masala Milk</span></div>
+        <div class="fav"><div class="im"><img width="760" height="385" loading="lazy" src="img/cut/fries2.webp" alt=""></div><span>Fries</span></div>
+        <div class="fav"><div class="im"><img width="760" height="524" loading="lazy" src="img/cut/nuggets.webp" alt=""></div><span>Nuggets</span></div>
+        <div class="fav"><div class="im"><img width="684" height="777" loading="lazy" src="img/cut/bucket.webp" alt=""></div><span>Bucket</span></div>
       </div>
     </div>
   </div>
@@ -379,11 +526,11 @@ footer img{height:34px;width:auto}
     <div class="banner"><h2>Inside Albrost</h2><div class="bars"><i></i><i></i></div></div>
     <p class="sub">A look around Albrost, from the shop front to the shawarma station and our seating.</p>
     <div class="gallery">
-      <div class="ph shot lg"><img src="img/gallery/shopfront.webp" alt="Albrost Shop Front" loading="lazy"><b>Shop Front</b></div>
-      <div class="ph shot"><img src="img/gallery/station.webp" alt="Albrost Shawarma Station" loading="lazy"><b>Shawarma Station</b></div>
-      <div class="ph shot"><img src="img/gallery/counter.webp" alt="Albrost Counter" loading="lazy"><b>Counter</b></div>
-      <div class="ph shot"><img src="img/gallery/seating.webp" alt="Albrost Seating" loading="lazy"><b>Seating</b></div>
-      <div class="ph shot"><img src="img/gallery/neon.webp" alt="Albrost Our Wall" loading="lazy"><b>Our Wall</b></div>
+      <div class="ph shot lg"><img width="800" height="554" src="img/gallery/shopfront.webp" alt="Albrost Shop Front" loading="lazy"><b>Shop Front</b></div>
+      <div class="ph shot"><img width="630" height="600" src="img/gallery/station.webp" alt="Albrost Shawarma Station" loading="lazy"><b>Shawarma Station</b></div>
+      <div class="ph shot"><img width="380" height="570" src="img/gallery/counter.webp" alt="Albrost Counter" loading="lazy"><b>Counter</b></div>
+      <div class="ph shot"><img width="570" height="420" src="img/gallery/seating.webp" alt="Albrost Seating" loading="lazy"><b>Seating</b></div>
+      <div class="ph shot"><img width="520" height="560" src="img/gallery/neon.webp" alt="Albrost Our Wall" loading="lazy"><b>Our Wall</b></div>
     </div>
   </div>
 </section>
@@ -397,15 +544,15 @@ footer img{height:34px;width:auto}
         <div class="rf-row">
           <span class="rf-lab">Your rating</span>
           <div class="stars" id="starPick" role="radiogroup" aria-label="Rating">
-            <button type="button" data-s="1" aria-label="1 star">★</button><button type="button" data-s="2" aria-label="2 stars">★</button><button type="button" data-s="3" aria-label="3 stars">★</button><button type="button" data-s="4" aria-label="4 stars">★</button><button type="button" data-s="5" aria-label="5 stars">★</button>
+            <button type="button" role="radio" aria-checked="false" data-s="1" aria-label="1 star">★</button><button type="button" role="radio" aria-checked="false" data-s="2" aria-label="2 stars">★</button><button type="button" role="radio" aria-checked="false" data-s="3" aria-label="3 stars">★</button><button type="button" role="radio" aria-checked="false" data-s="4" aria-label="4 stars">★</button><button type="button" role="radio" aria-checked="false" data-s="5" aria-label="5 stars">★</button>
           </div>
         </div>
         <div class="rf-row two">
-          <label class="fld" for="revName"><span class="rf-lab">Name</span><input id="revName" maxlength="40" placeholder="Your name"></label>
-          <label class="fld" for="revOutlet"><span class="rf-lab">Outlet</span><select id="revOutlet"><option>Fatehgunj</option><option>Panigate</option></select></label>
+          <label class="fld" for="revName"><span class="rf-lab">Name</span><input id="revName" name="name" autocomplete="name" maxlength="40" placeholder="e.g. Ayaan…"></label>
+          <label class="fld" for="revOutlet"><span class="rf-lab">Outlet</span><select id="revOutlet" name="outlet"><option>Fatehgunj</option><option>Panigate</option></select></label>
         </div>
-        <label class="fld" for="revText"><span class="rf-lab">Your review</span><textarea id="revText" rows="4" maxlength="600" placeholder="What did you order? How was it?"></textarea></label>
-        <div class="rf-foot"><button class="btn y" type="submit" id="revSubmit">Post review</button><span class="rf-msg" id="revMsg" role="status"></span></div>
+        <label class="fld" for="revText"><span class="rf-lab">Your review</span><textarea id="revText" name="review" rows="4" maxlength="600" placeholder="What did you order? How was it?"></textarea></label>
+        <div class="rf-foot"><button class="btn y" type="submit" id="revSubmit">Post Review</button><span class="rf-msg" id="revMsg" role="status"></span></div>
       </form>
       <div class="revside">
         <div class="revsum" id="revSum"><div class="avg" id="revAvg">–</div><div><div class="avgstars" id="revAvgStars">★★★★★</div><div class="cnt" id="revCnt">No reviews yet</div></div></div>
@@ -430,7 +577,7 @@ footer img{height:34px;width:auto}
         <a class="call" href="tel:+917600979886"><small>CALL</small><span class="num">+91 76009 79886</span></a>
         <div class="row-btns">
           <a class="lnk solid" href="tel:+917600979886">Call Fatehgunj</a>
-          <button class="lnk" type="button" data-copy="+91 76009 79886">Copy number</button>
+          <button class="lnk" type="button" data-copy="+91 76009 79886">Copy Number</button>
           <a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Albrost+Fast+Food+Fatehgunj+Vadodara" target="_blank" rel="noopener">Directions</a>
         </div>
       </article>
@@ -441,7 +588,7 @@ footer img{height:34px;width:auto}
         <a class="call" href="tel:+917043495015"><small>CALL</small><span class="num">+91 70434 95015</span></a>
         <div class="row-btns">
           <a class="lnk solid" href="tel:+917043495015">Call Panigate</a>
-          <button class="lnk" type="button" data-copy="+91 70434 95015">Copy number</button>
+          <button class="lnk" type="button" data-copy="+91 70434 95015">Copy Number</button>
           <a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Albrost+Fast+Food+Panigate+Vadodara" target="_blank" rel="noopener">Directions</a>
         </div>
       </article>
@@ -461,7 +608,19 @@ footer img{height:34px;width:auto}
 </section>
 </main>
 
-<footer><div class="wrap"><img src="img/cut/logo.webp" alt="Albrost"><span>Albrost® Fast Food · Fatehgunj &amp; Panigate · Since 2014</span><span>Prices in ₹ as per our take-away menu and may change.</span></div></footer>
+<dialog class="mdlg" id="mealDlg" aria-labelledby="mdTitle">
+  <div class="mstage"><img id="mdImg" alt=""><div class="coin" id="mdCoin"></div></div>
+  <div class="mbody">
+    <h2 id="mdTitle"></h2>
+    <p id="mdDesc"></p>
+    <p class="mnote">Order at the counter, or call an outlet.</p>
+    <div class="row-btns"><a class="lnk solid" href="tel:+917600979886">Call Fatehgunj</a><a class="lnk solid" href="tel:+917043495015">Call Panigate</a></div>
+  </div>
+  <button class="mclose" type="button" id="mdClose" aria-label="Close">×</button>
+</dialog>
+<div class="sr" id="live" aria-live="polite"></div>
+
+<footer><div class="wrap"><img width="700" height="404" src="img/cut/logo.webp" alt="Albrost"><span>Albrost® Fast Food · Fatehgunj &amp; Panigate · Since 2014</span><span>Prices in ₹ as per our take-away menu and may change.</span></div></footer>
 
 <script>
 const MEALS=[
@@ -519,20 +678,26 @@ const dot=v=>`<span class="dot${v?' v':''}" title="${v?'Veg':'Non-veg'}"></span>
 (()=>{const words=["Shawarma","Broast Chicken","Burgers","Melting Pizza","Rolls & Wraps","Grilled Sandwich","Buckets","French Fries","Special Caramel","100% Halal"];
  const h=words.map(w=>`<span>${w}</span><i>★</i>`).join("");$("#ticker").innerHTML=h+h;})();
 
-$("#mealGrid").innerHTML=MEALS.map(m=>`<article class="meal"><div class="stage">
- <img class="drink" src="img/cut/${m.drink||'bottle'}.webp" alt=""><img class="main" src="img/cut/${m.m}.webp" alt="${esc(m.n)}"><img class="side" src="img/cut/fries.webp" alt="">
+$("#mealGrid").innerHTML=MEALS.map((m,i)=>`<article class="meal"><div class="stage">
+ <img class="drink" src="img/cut/${m.drink||'bottle'}.webp" alt=""><img class="main" src="img/cut/${m.m}.webp" alt="${esc(m.n)}"><img width="700" height="356" class="side" src="img/cut/fries.webp" alt="">
  <div class="coin${m.v?' v':''}">₹${m.p}</div></div>
- <div class="body"><h3>${dot(m.v)}${esc(m.n)}</h3><p>${esc(m.d)}</p></div></article>`).join("");
+ <div class="body"><h3>${dot(m.v)}<button type="button" class="mopen" data-i="${i}">${esc(m.n)}</button></h3><p>${esc(m.d)}</p><span class="peek" aria-hidden="true">View Meal →</span></div></article>`).join("");
 
 $("#bucketGrid").innerHTML=BUCKETS.map(b=>`<article class="bucket"><div class="coin">₹${b.p}</div>
- <div class="bstage"><img class="b" src="img/cut/bucket.webp" alt=""><img class="p1" src="img/cut/drumstick.webp" alt=""><img class="p2" src="img/cut/strip.webp" alt=""><img class="p3" src="img/cut/wings.webp" alt=""></div>
+ <div class="bstage"><img width="684" height="777" class="b" src="img/cut/bucket.webp" alt=""><img width="760" height="473" class="p1" src="img/cut/drumstick.webp" alt=""><img width="684" height="331" class="p2" src="img/cut/strip.webp" alt=""><img width="760" height="449" class="p3" src="img/cut/wings.webp" alt=""></div>
  <h3>${b.n}</h3><ul>${b.c.map(([k,q])=>`<li><span>${k}</span><b>× ${q}</b></li>`).join("")}</ul>
  <div class="pcs">${b.c.reduce((a,x)=>a+x[1],0)} pieces of broast chicken</div></article>`).join("");
 $("#dips").insertAdjacentHTML("beforeend",DIPS.map(([n,p,i])=>`<div class="dip"><img src="img/cut/${i}.webp" alt=""><span>${n}</span><b>₹${p}</b></div>`).join(""));
 
-let tab="all",diet="all",q="";
-$("#tabs").innerHTML=[["all","All"],...CATS.map(c=>[c.id,c.t])].map(([id,t])=>`<button class="tab" type="button" data-tab="${id}" aria-pressed="${id==='all'}">${esc(t)}</button>`).join("");
+const P=new URLSearchParams(location.search);
+let tab=P.get("tab")||"all",diet=P.get("diet")||"all",q=P.get("q")||"";
+if(tab!=="all"&&!CATS.some(c=>c.id===tab))tab="all";
+if(!["all","veg","non"].includes(diet))diet="all";
+function syncURL(){const p=new URLSearchParams();if(tab!=="all")p.set("tab",tab);if(diet!=="all")p.set("diet",diet);
+  if(q.trim())p.set("q",q.trim());const s=p.toString();history.replaceState(null,"",(s?"?"+s:location.pathname)+location.hash)}
+$("#tabs").innerHTML=[["all","All"],...CATS.map(c=>[c.id,c.t])].map(([id,t])=>`<button class="tab" type="button" data-tab="${id}" aria-pressed="${id===tab}"><span class="pill" aria-hidden="true"></span>${esc(t)}</button>`).join("");
 function renderMenu(){
+  syncURL();
   const term=q.trim().toLowerCase(); let html="";
   for(const c of CATS){
     if(tab!=="all"&&tab!==c.id)continue;
@@ -550,19 +715,24 @@ function renderMenu(){
         const cells=ps.length<n?`<td class="p" colspan="${n}">₹${ps[0]}</td>`:ps.map(p=>`<td class="p">${p==null?'<span style="color:#55545a">–</span>':'₹'+p}</td>`).join("");
         return `<tr><td class="nm"><div>${dot(c.veg)}${esc(nm)}</div></td>${cells}</tr>`}).join("");
     }
-    html+=`<article class="cat${c.veg?' veg':''}"><div class="head"><img src="img/${c.img}.webp" alt="${esc(c.t)}"><h3>${esc(c.t)}</h3></div><table>${head}${rows}</table></article>`;
+    html+=`<article class="cat${c.veg?' veg':''}" style="view-transition-name:cat-${c.id}"><div class="head"><img loading="lazy" src="img/${c.img}.webp" alt="${esc(c.t)}"><h3>${esc(c.t)}</h3></div><table>${head}${rows}</table></article>`;
   }
-  $("#cats").innerHTML=html||`<div class="empty">Nothing matches “${esc(q)}”. Try “peri peri”, “paneer” or “fish”.</div>`;
+  $("#cats").innerHTML=html||(term?`<div class="empty">Nothing matches “${esc(q)}”. Try “peri peri”, “paneer” or “fish”.</div>`:`<div class="empty">No ${diet==="veg"?"veg":"chicken or fish"} dishes in this section. Pick another section or switch to All.</div>`);
 }
+document.querySelectorAll("[data-diet]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.diet===diet));
+$("#q").value=q;
 renderMenu();
-$("#tabs").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(!b)return;tab=b.dataset.tab;
-  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-pressed",t===b));renderMenu();});
-document.querySelectorAll("[data-diet]").forEach(b=>b.addEventListener("click",()=>{diet=b.dataset.diet;
-  document.querySelectorAll("[data-diet]").forEach(x=>x.setAttribute("aria-pressed",x===b));renderMenu();}));
-$("#q").addEventListener("input",e=>{q=e.target.value;if(q){tab="all";document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-pressed",t.dataset.tab==="all"))}renderMenu();});
+const setTab=id=>document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-pressed",t.dataset.tab===id));
+$("#tabs").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(!b)return;
+  vt(()=>{tab=b.dataset.tab;setTab(tab);renderMenu()}).then(()=>b.scrollIntoView({block:"nearest",inline:"nearest",behavior:"smooth"}))});
+document.querySelectorAll("[data-diet]").forEach(b=>b.addEventListener("click",()=>vt(()=>{diet=b.dataset.diet;
+  document.querySelectorAll("[data-diet]").forEach(x=>x.setAttribute("aria-pressed",x===b));renderMenu()})));
+let qTimer;
+$("#q").addEventListener("input",e=>{clearTimeout(qTimer);const v=e.target.value;
+  qTimer=setTimeout(()=>vt(()=>{q=v;if(q){tab="all";setTab("all")}renderMenu()}),120)});
 
 document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",async()=>{
-  const old=b.textContent;try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent="Copied"}catch(e){b.textContent=b.dataset.copy}
+  const old=b.textContent;try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent="Copied";$("#live").textContent="Number copied"}catch(e){b.textContent=b.dataset.copy}
   setTimeout(()=>b.textContent=old,1600)}));
 
 
@@ -570,10 +740,11 @@ document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",a
 (()=>{
   let stars=0, db=null, me=null, mine=null;
   const pick=$("#starPick"), form=$("#revForm"), msg=$("#revMsg");
-  const paint=n=>pick.querySelectorAll("button").forEach(b=>b.classList.toggle("on",+b.dataset.s<=n));
+  const paint=n=>pick.querySelectorAll("button").forEach(b=>{b.classList.toggle("on",+b.dataset.s<=n);b.setAttribute("aria-checked",+b.dataset.s===stars)});
   pick.addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(!b)return;stars=+b.dataset.s;paint(stars)});
   pick.addEventListener("mouseover",e=>{const b=e.target.closest("[data-s]");if(b)paint(+b.dataset.s)});
   pick.addEventListener("mouseleave",()=>paint(stars));
+  pick.addEventListener("keydown",e=>{const d={ArrowRight:1,ArrowUp:1,ArrowLeft:-1,ArrowDown:-1}[e.key];if(!d)return;e.preventDefault();stars=Math.min(5,Math.max(1,(stars||0)+d));paint(stars);pick.querySelector(`[data-s="${stars}"]`).focus()});
   const starStr=n=>"★★★★★".slice(0,n)+"☆☆☆☆☆".slice(0,5-n);
   function render(list){
     const L=$("#revList");
@@ -596,7 +767,7 @@ document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",a
     if(!db||!me){msg.textContent="Reviews can't be posted from this copy of the page.";return}
     $("#revSubmit").disabled=true;msg.textContent="Posting…";
     try{await db.doc("reviews/"+me).set({stars,text,name:$("#revName").value.trim().slice(0,40),outlet:$("#revOutlet").value,at:Date.now()});
-      msg.textContent=mine?"Review updated. Thank you!":"Thanks! Your review is posted.";mine=true;$("#revSubmit").textContent="Update my review"}
+      msg.textContent=mine?"Review updated. Thank you!":"Thanks! Your review is posted.";mine=true;$("#revSubmit").textContent="Update My Review"}
     catch(err){msg.textContent="Couldn't post your review. Please try again in a moment."}
     finally{$("#revSubmit").disabled=false}
   });
@@ -611,17 +782,82 @@ document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",a
     db.collection("reviews").orderBy("at","desc").limit(60).onSnapshot(snap=>{
       const list=snap.docs.map(x=>({id:x.id,...x.data()})).filter(r=>r.stars>=1&&r.stars<=5&&typeof r.text==="string");
       const m=list.find(r=>r.id===me);
-      if(m&&!mine){mine=true;stars=m.stars;paint(stars);$("#revText").value=m.text;$("#revName").value=m.name||"";$("#revOutlet").value=m.outlet||"Fatehgunj";$("#revSubmit").textContent="Update my review"}
+      if(m&&!mine){mine=true;stars=m.stars;paint(stars);$("#revText").value=m.text;$("#revName").value=m.name||"";$("#revOutlet").value=m.outlet||"Fatehgunj";$("#revSubmit").textContent="Update My Review"}
       render(list)},()=>{});
   });
 })();
 
-// hero parallax
-(()=>{const f=$("#feast");if(!f||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
- const imgs=[...f.querySelectorAll("img")];
- f.parentElement.addEventListener("pointermove",e=>{const r=f.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-  imgs.forEach(i=>{const d=+i.dataset.d;i.style.transform=`translate(${x*d}px,${y*d}px)`})});
- f.parentElement.addEventListener("pointerleave",()=>imgs.forEach(i=>i.style.transform=""));})();
+
+// ===== v4 =====
+(()=>{
+ const RM=matchMedia("(prefers-reduced-motion: reduce)").matches, root=document.documentElement;
+ const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+ // cheapest meal price, read from the real data
+ try{const m=Math.min(...MEALS.map(x=>x.p));if(isFinite(m))$("#minp").textContent=m}catch(e){}
+ // draggable stickers
+ const stage=$("#h4stage"),hint=$("#hint");let Z=20;
+ stage.querySelectorAll(".stk").forEach(el=>{
+  let sx,sy,ox=0,oy=0,lx=0,id=null,moved=false;
+  el.addEventListener("pointerdown",e=>{if(e.button>0)return;id=e.pointerId;el.setPointerCapture(id);sx=e.clientX;sy=e.clientY;lx=e.clientX;moved=false;
+    el.classList.add("drag");el.style.zIndex=++Z});
+  el.addEventListener("pointermove",e=>{if(e.pointerId!==id)return;const r=stage.getBoundingClientRect();
+    const dx=clamp(ox+e.clientX-sx,-r.width*.55,r.width*.55),dy=clamp(oy+e.clientY-sy,-r.height*.55,r.height*.55);
+    el.style.setProperty("--dx",dx+"px");el.style.setProperty("--dy",dy+"px");
+    el.style.setProperty("--tilt",clamp((e.clientX-lx)*1.1,-16,16)+"deg");lx=e.clientX;
+    if(!moved){moved=true;hint.classList.add("gone")}});
+  const end=e=>{if(e.pointerId!==id)return;id=null;el.classList.remove("drag");el.style.setProperty("--tilt","0deg");
+    ox=parseFloat(el.style.getPropertyValue("--dx"))||0;oy=parseFloat(el.style.getPropertyValue("--dy"))||0};
+  el.addEventListener("pointerup",end);el.addEventListener("pointercancel",end);
+  el.addEventListener("dblclick",()=>{ox=oy=0;el.style.setProperty("--dx","0px");el.style.setProperty("--dy","0px")});
+ });
+ setTimeout(()=>hint.classList.add("gone"),14000);
+ // dish buttons open the matching menu tab, then the link scrolls to the menu
+ document.querySelectorAll("[data-go]").forEach(a=>a.addEventListener("click",()=>{
+   const t=document.querySelector(`[data-tab="${a.dataset.go}"]`);if(t)t.click()}));
+ // curtain: opens once, then the stickers slap on
+ const cu=$("#curtain");
+ const start=()=>{root.classList.add("js-ready");if(!cu)return;cu.classList.add("open");setTimeout(()=>cu.remove(),1400)};
+ if(RM||document.visibilityState==="hidden"){cu&&cu.remove();root.classList.add("js-ready")}
+ else{(document.fonts&&document.fonts.ready||Promise.resolve()).then(()=>setTimeout(start,650));setTimeout(()=>{if(cu&&!cu.classList.contains("open"))start()},3500)}
+ // ticker leans into the scroll
+ const tk=document.querySelector(".ticker");let lastY=scrollY,sk=0,raf=0;
+ if(tk&&!RM){const tick=()=>{const v=scrollY-lastY;lastY=scrollY;sk+=(clamp(v*.1,-6,6)-sk)*.18;tk.style.setProperty("--skew",(-sk).toFixed(2)+"deg");
+   raf=(Math.abs(sk)>.02||Math.abs(v)>0)?requestAnimationFrame(tick):0};
+   addEventListener("scroll",()=>{if(!raf)raf=requestAnimationFrame(tick)},{passive:true})}
+})();
+
+// v2: view transitions with a fallback when the browser lacks them or motion is reduced
+function vt(fn){
+  if(!document.startViewTransition||document.visibilityState==="hidden"||matchMedia("(prefers-reduced-motion: reduce)").matches){fn();return Promise.resolve()}
+  const t=document.startViewTransition(fn);t.ready.catch(()=>{});t.updateCallbackDone.catch(()=>{});
+  return t.finished.catch(()=>{});
+}
+
+// v2: meal detail, the food photo morphs from the card into the dialog
+(()=>{const dlg=$("#mealDlg"),img=$("#mdImg");let from=null;
+ $("#mealGrid").addEventListener("click",e=>{const b=e.target.closest(".mopen");if(!b)return;const m=MEALS[+b.dataset.i];
+  from=b.closest(".meal").querySelector(".main");from.style.viewTransitionName="meal-hero";
+  vt(()=>{from.style.viewTransitionName="";img.src=from.src;img.alt=m.n;
+   $("#mdTitle").innerHTML=dot(m.v)+esc(m.n);$("#mdDesc").textContent=m.d;
+   const c=$("#mdCoin");c.textContent="₹"+m.p;c.className="coin"+(m.v?" v":"");
+   img.style.viewTransitionName="meal-hero";dlg.showModal()})});
+ const close=()=>{if(!dlg.open)return;
+  vt(()=>{img.style.viewTransitionName="";dlg.close();if(from)from.style.viewTransitionName="meal-hero"})
+   .then(()=>{if(from)from.style.viewTransitionName=""})};
+ $("#mdClose").addEventListener("click",close);
+ dlg.addEventListener("cancel",e=>{e.preventDefault();close()});
+ dlg.addEventListener("click",e=>{if(e.target===dlg)close()});
+})();
+
+// v2: pause control for the scrolling ticker
+(()=>{const t=$("#tick"),b=$("#tpause");b.addEventListener("click",()=>{const p=t.classList.toggle("paused");
+  b.setAttribute("aria-pressed",p);b.setAttribute("aria-label",p?"Play scrolling text":"Pause scrolling text");b.textContent=p?"▶":"❚❚"})})();
+
+// v2: highlight the section you are reading in the top nav
+(()=>{const links=[...document.querySelectorAll(".nav a")];
+ const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting)
+  links.forEach(a=>a.hash==="#"+e.target.id?a.setAttribute("aria-current","true"):a.removeAttribute("aria-current"))},{rootMargin:"-40% 0px -55% 0px"});
+ links.forEach(a=>{const s=document.querySelector(a.hash);if(s)io.observe(s)})})();
 </script>
 
 </body>
