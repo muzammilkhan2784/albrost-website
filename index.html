@@ -95,7 +95,7 @@ em{font-style:italic;color:var(--red)}
 .h4stage{position:relative;aspect-ratio:1/1;width:100%;max-width:600px;justify-self:center;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .arch{position:absolute;left:10%;right:6%;top:0;bottom:4%;border-radius:999px 999px 36px 36px;background:linear-gradient(170deg,var(--butter) 0%,#f3c24f 55%,#eeb23e 100%);box-shadow:inset 0 -40px 60px -30px rgba(160,70,10,.22),0 40px 60px -40px rgba(120,60,10,.5);overflow:hidden}
 .arch::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.35) 1.6px,transparent 2px);background-size:18px 18px;-webkit-mask:radial-gradient(circle at 30% 12%,#000,transparent 65%);mask:radial-gradient(circle at 30% 12%,#000,transparent 65%)}
-.stk{position:absolute;width:var(--w);left:var(--l);top:var(--t);z-index:var(--z);cursor:grab;touch-action:pan-y;
+.stk{position:absolute;width:var(--w);left:var(--l);top:var(--t);z-index:var(--z);pointer-events:none;
   transform:translate(var(--dx,0px),var(--dy,0px)) rotate(calc(var(--r) * .7 + var(--tilt,0deg)));
   filter:drop-shadow(0 16px 14px rgba(70,35,5,.28));
   animation:slap .9s cubic-bezier(.2,1.3,.4,1) both,bob 7s ease-in-out infinite;
@@ -415,6 +415,9 @@ html:not(.js) .curtain{display:none}
 .brand img{height:38px}
 .curtain img{box-sizing:content-box;background:var(--ink);border-radius:32px;padding:26px 36px;width:min(220px,48vw)}
 .curtain::after{top:calc(50% + 110px)}
+
+.h4stage{touch-action:auto;user-select:auto}
+.stk:hover img{transform:none}
 </style>
 </head>
 <body>
@@ -449,7 +452,7 @@ html:not(.js) .curtain{display:none}
       <div class="arch"></div>
       <div class="stk" style="--w:48%;--l:-3%;--t:6%;--r:-10deg;--z:2;--k:0"><img width="1000" height="555" src="img/cut/st_wrap.webp" alt="" decoding="async" draggable="false"></div><div class="stk" style="--w:50%;--l:50%;--t:-3%;--r:8deg;--z:3;--k:1"><img width="1000" height="698" src="img/cut/st_chpizza.webp" alt="" decoding="async" draggable="false"></div><div class="stk" style="--w:60%;--l:19%;--t:24%;--r:-4deg;--z:4;--k:2"><img width="1000" height="848" src="img/cut/st_loadedburger.webp" alt="" fetchpriority="high" decoding="async" draggable="false"></div><div class="stk" style="--w:43%;--l:-1%;--t:64%;--r:6deg;--z:5;--k:3"><img width="1000" height="529" src="img/cut/st_fries2.webp" alt="" decoding="async" draggable="false"></div><div class="stk" style="--w:39%;--l:60%;--t:62%;--r:-8deg;--z:6;--k:4"><img width="1000" height="704" src="img/cut/st_nuggets.webp" alt="" decoding="async" draggable="false"></div><div class="seal"><svg viewBox="0 0 200 200"><defs><path id="ring" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1-160 0"/></defs><text><textPath href="#ring" startOffset="0">100% HALAL · SINCE 2014 · FATEHGUNJ · PANIGATE ·</textPath></text></svg><img width="640" height="612" src="img/cut/halal.webp" alt=""></div>
       <div class="ptag" id="ptag">Meals from <b>₹<span id="minp">120</span></b></div>
-      <div class="hint" id="hint">Drag the food around</div>
+      
     </div>
   </div>
 </section>
@@ -800,23 +803,7 @@ document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",a
  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
  // cheapest meal price, read from the real data
  try{const m=Math.min(...MEALS.map(x=>x.p));if(isFinite(m))$("#minp").textContent=m}catch(e){}
- // draggable stickers
- const stage=$("#h4stage"),hint=$("#hint");let Z=20;
- stage.querySelectorAll(".stk").forEach(el=>{
-  let sx,sy,ox=0,oy=0,lx=0,id=null,moved=false;
-  el.addEventListener("pointerdown",e=>{if(e.button>0)return;id=e.pointerId;el.setPointerCapture(id);sx=e.clientX;sy=e.clientY;lx=e.clientX;moved=false;
-    el.classList.add("drag");el.style.zIndex=++Z});
-  el.addEventListener("pointermove",e=>{if(e.pointerId!==id)return;const r=stage.getBoundingClientRect();
-    const dx=clamp(ox+e.clientX-sx,-r.width*.55,r.width*.55),dy=clamp(oy+e.clientY-sy,-r.height*.55,r.height*.55);
-    el.style.setProperty("--dx",dx+"px");el.style.setProperty("--dy",dy+"px");
-    el.style.setProperty("--tilt",clamp((e.clientX-lx)*1.1,-16,16)+"deg");lx=e.clientX;
-    if(!moved){moved=true;hint.classList.add("gone")}});
-  const end=e=>{if(e.pointerId!==id)return;id=null;el.classList.remove("drag");el.style.setProperty("--tilt","0deg");
-    ox=parseFloat(el.style.getPropertyValue("--dx"))||0;oy=parseFloat(el.style.getPropertyValue("--dy"))||0};
-  el.addEventListener("pointerup",end);el.addEventListener("pointercancel",end);
-  el.addEventListener("dblclick",()=>{ox=oy=0;el.style.setProperty("--dx","0px");el.style.setProperty("--dy","0px")});
- });
- setTimeout(()=>hint.classList.add("gone"),14000);
+
  // dish buttons open the matching menu tab, then the link scrolls to the menu
  document.querySelectorAll("[data-go]").forEach(a=>a.addEventListener("click",()=>{
    const t=document.querySelector(`[data-tab="${a.dataset.go}"]`);if(t)t.click()}));
@@ -880,15 +867,6 @@ function vt(fn){
    const el=e.target,to=+el.dataset.n,t0=performance.now(),D=1300;
    const f=t=>{const p=Math.min(1,(t-t0)/D);set(el,to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}},{threshold:.6});
   nums.forEach(el=>{set(el,0);io.observe(el)})}
- // "View" bubble follows the pointer over meal cards
- if(fine&&!RM){const c=document.createElement("div");c.className="cur";c.setAttribute("aria-hidden","true");c.textContent="View";document.body.appendChild(c);
-  let x=0,y=0,tx=0,ty=0,raf=0;
-  const loop=()=>{x+=(tx-x)*.2;y+=(ty-y)*.2;c.style.transform=`translate(${x}px,${y}px)`;raf=(Math.abs(tx-x)+Math.abs(ty-y)>.3)?requestAnimationFrame(loop):0};
-  document.addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY;if(!raf)raf=requestAnimationFrame(loop)},{passive:true});
-  const dlg=$("#mealDlg");
-  document.addEventListener("pointermove",e=>{c.classList.toggle("on",!dlg.open&&!!(e.target.closest&&e.target.closest(".meal")))},{passive:true});
-  addEventListener("scroll",()=>c.classList.remove("on"),{passive:true});
-  dlg.addEventListener("close",()=>c.classList.remove("on"))}
 })();
 </script>
 
