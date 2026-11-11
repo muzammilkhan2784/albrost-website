@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f7f2e8">
 <title>Albrost Fast Food</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Albrost Fast Food. Fatehgunj and Panigate. Halal shawarma, burgers, pizza, broast chicken and buckets since 2014.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -469,6 +471,14 @@ html,body{overflow-x:clip}
   .dip span{flex:none;font-size:15px}
   .dip b{font-size:17px}
 }
+
+/* menu PDF link + Google reviews card */
+.pdfl{color:var(--red);font-weight:700;text-underline-offset:3px;white-space:nowrap}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:32px;padding:34px;box-shadow:var(--shadow);max-width:760px;display:grid;gap:16px}
+.gcard p{margin:0;font-size:18px;color:var(--muted);max-width:56ch}
+.gstars{font-size:30px;letter-spacing:4px;color:#e8a91a}
+.gcard .row-btns{margin-top:4px}
+@media (max-width:600px){.gcard{padding:24px}.gcard .btn{width:100%;justify-content:center}.pdfl{white-space:normal}}
 </style>
 </head>
 <body>
@@ -547,7 +557,7 @@ html,body{overflow-x:clip}
 <section id="menu">
   <div class="wrap">
     <div class="banner"><span class="kick">Everything</span><h2>The <em>full</em> menu</h2></div>
-    <p class="sub">All prices in ₹. Pick a section, search for a dish, or show only veg.</p>
+    <p class="sub">All prices in ₹. Pick a section, search for a dish, or show only veg. <a class="pdfl" href="Albrost-Menu.pdf" target="_blank" rel="noopener">Download the printed menu (PDF, 5.6 MB)</a></p>
     <div class="tools">
       <div class="tabs" id="tabs" role="toolbar" aria-label="Menu sections"></div>
       <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b9b7b2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" name="q" type="search" placeholder="Search: peri peri, paneer, Lebanese…" autocomplete="off" spellcheck="false" enterkeyhint="search"></label>
@@ -596,32 +606,15 @@ html,body{overflow-x:clip}
 
 <section id="reviews" class="alt">
   <div class="wrap">
-    <div class="banner"><span class="kick">Kind words</span><h2>What guests <em>say</em></h2></div>
-    <p class="sub">Ate with us at Fatehgunj or Panigate? Tell us how it was.</p>
-    <div class="revgrid">
-      <form class="revform" id="revForm" novalidate>
-        <div class="rf-row">
-          <span class="rf-lab">Your rating</span>
-          <div class="stars" id="starPick" role="radiogroup" aria-label="Rating">
-            <button type="button" role="radio" aria-checked="false" data-s="1" aria-label="1 star">★</button><button type="button" role="radio" aria-checked="false" data-s="2" aria-label="2 stars">★</button><button type="button" role="radio" aria-checked="false" data-s="3" aria-label="3 stars">★</button><button type="button" role="radio" aria-checked="false" data-s="4" aria-label="4 stars">★</button><button type="button" role="radio" aria-checked="false" data-s="5" aria-label="5 stars">★</button>
-          </div>
-        </div>
-        <div class="rf-row two">
-          <label class="fld" for="revName"><span class="rf-lab">Name</span><input id="revName" name="name" autocomplete="name" maxlength="40" placeholder="e.g. Ayaan…"></label>
-          <label class="fld" for="revOutlet"><span class="rf-lab">Outlet</span><select id="revOutlet" name="outlet"><option>Fatehgunj</option><option>Panigate</option></select></label>
-        </div>
-        <label class="fld" for="revText"><span class="rf-lab">Your review</span><textarea id="revText" name="review" rows="4" maxlength="600" placeholder="What did you order? How was it?"></textarea></label>
-        <div class="rf-foot"><button class="btn y" type="submit" id="revSubmit">Post Review</button><span class="rf-msg" id="revMsg" role="status"></span></div>
-      </form>
-      <div class="revside">
-        <div class="revsum" id="revSum"><div class="avg" id="revAvg">–</div><div><div class="avgstars" id="revAvgStars">★★★★★</div><div class="cnt" id="revCnt">No reviews yet</div></div></div>
-        <div class="gbtns">
-          <a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Albrost+Fast+Food+Fatehgunj+Vadodara" target="_blank" rel="noopener">Review Fatehgunj on Google</a>
-          <a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Albrost+Fast+Food+Panigate+Vadodara" target="_blank" rel="noopener">Review Panigate on Google</a>
-        </div>
+    <div class="banner"><span class="kick">Kind words</span><h2>Loved your <em>meal?</em></h2></div>
+    <div class="gcard">
+      <div class="gstars" aria-hidden="true">★★★★★</div>
+      <p>Ate with us at Fatehgunj or Panigate? A quick Google review helps other people find good food, and it means a lot to us.</p>
+      <div class="row-btns">
+        <a class="btn y" href="https://www.google.com/maps/search/?api=1&amp;query=Albrost+Fast+Food+Fatehgunj+Vadodara" target="_blank" rel="noopener">Review Fatehgunj on Google</a>
+        <a class="btn k" href="https://www.google.com/maps/search/?api=1&amp;query=Albrost+Fast+Food+Panigate+Vadodara" target="_blank" rel="noopener">Review Panigate on Google</a>
       </div>
     </div>
-    <div class="revlist" id="revList"><div class="revempty">Be the first to leave a review.</div></div>
   </div>
 </section>
 
@@ -788,58 +781,6 @@ $("#q").addEventListener("input",e=>{clearTimeout(qTimer);const v=e.target.value
 document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",async()=>{
   const old=b.textContent;try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent="Copied";$("#live").textContent="Number copied"}catch(e){b.textContent=b.dataset.copy}
   setTimeout(()=>b.textContent=old,1600)}));
-
-
-// reviews
-(()=>{
-  let stars=0, db=null, me=null, mine=null;
-  const pick=$("#starPick"), form=$("#revForm"), msg=$("#revMsg");
-  const paint=n=>pick.querySelectorAll("button").forEach(b=>{b.classList.toggle("on",+b.dataset.s<=n);b.setAttribute("aria-checked",+b.dataset.s===stars)});
-  pick.addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(!b)return;stars=+b.dataset.s;paint(stars)});
-  pick.addEventListener("mouseover",e=>{const b=e.target.closest("[data-s]");if(b)paint(+b.dataset.s)});
-  pick.addEventListener("mouseleave",()=>paint(stars));
-  pick.addEventListener("keydown",e=>{const d={ArrowRight:1,ArrowUp:1,ArrowLeft:-1,ArrowDown:-1}[e.key];if(!d)return;e.preventDefault();stars=Math.min(5,Math.max(1,(stars||0)+d));paint(stars);pick.querySelector(`[data-s="${stars}"]`).focus()});
-  const starStr=n=>"★★★★★".slice(0,n)+"☆☆☆☆☆".slice(0,5-n);
-  function render(list){
-    const L=$("#revList");
-    if(!list.length){L.innerHTML='<div class="revempty">Be the first to leave a review.</div>';$("#revAvg").textContent="–";$("#revCnt").textContent="No reviews yet";return}
-    const avg=list.reduce((a,r)=>a+r.stars,0)/list.length;
-    $("#revAvg").textContent=avg.toFixed(1);$("#revAvgStars").textContent=starStr(Math.round(avg));
-    $("#revCnt").textContent=list.length+(list.length===1?" review":" reviews");
-    L.innerHTML="";
-    for(const r of list){const el=document.createElement("article");el.className="rev";
-      el.innerHTML='<div class="top2"><span class="who"></span><span class="st"></span></div><p></p><div class="meta"></div>';
-      el.querySelector(".who").textContent=r.name||"Guest";el.querySelector(".st").textContent=starStr(r.stars);
-      el.querySelector("p").textContent=r.text;el.querySelector(".meta").textContent=r.outlet+" · "+new Date(r.at).toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"});
-      L.appendChild(el)}
-  }
-  const off=t=>{form.classList.add("off");form.querySelectorAll("input,select,textarea,button").forEach(x=>x.disabled=true);msg.textContent=t};
-  form.addEventListener("submit",async e=>{e.preventDefault();
-    const text=$("#revText").value.trim();
-    if(!stars){msg.textContent="Pick a star rating first.";return}
-    if(text.length<3){msg.textContent="Write a few words about your visit.";return}
-    if(!db||!me){msg.textContent="Reviews can't be posted from this copy of the page.";return}
-    $("#revSubmit").disabled=true;msg.textContent="Posting…";
-    try{await db.doc("reviews/"+me).set({stars,text,name:$("#revName").value.trim().slice(0,40),outlet:$("#revOutlet").value,at:Date.now()});
-      msg.textContent=mine?"Review updated. Thank you!":"Thanks! Your review is posted.";mine=true;$("#revSubmit").textContent="Update My Review"}
-    catch(err){msg.textContent="Couldn't post your review. Please try again in a moment."}
-    finally{$("#revSubmit").disabled=false}
-  });
-  if(!window.claude||!window.claude.use){off("Leave us a review on Google using the buttons here.");return}
-  const t=setTimeout(()=>{if(!db)off("Reviews are unavailable right now. You can review us on Google.")},10000);
-  Promise.all([claude.use("db"),claude.use("user")]).then(async([d,u])=>{
-    if(!d){clearTimeout(t);off("Sign in to leave a review here, or review us on Google.");return}
-    db=d; clearTimeout(t);
-    try{me=u?await u.id():null}catch(e){me=null}
-    let canWrite=true;try{const c=u&&u.can?await u.can("data.write"):null;if(c===false)canWrite=false}catch(e){}
-    if(!me||!canWrite)off("You can read reviews here. To write one, review us on Google.");
-    db.collection("reviews").orderBy("at","desc").limit(60).onSnapshot(snap=>{
-      const list=snap.docs.map(x=>({id:x.id,...x.data()})).filter(r=>r.stars>=1&&r.stars<=5&&typeof r.text==="string");
-      const m=list.find(r=>r.id===me);
-      if(m&&!mine){mine=true;stars=m.stars;paint(stars);$("#revText").value=m.text;$("#revName").value=m.name||"";$("#revOutlet").value=m.outlet||"Fatehgunj";$("#revSubmit").textContent="Update My Review"}
-      render(list)},()=>{});
-  });
-})();
 
 
 // ===== v4 =====
